@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="943" lt="943" ts="1367683684340" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 2-1" dt="text" by="274" ng="1" na="301">
+  <responseData class="java.lang.String">QUIZ=121
+VIEW=122
+TAG=0
+SAVE=141
+SHARE=138
+PUSHTOKEN=0
+CLICKTHROUGH=130
+FACEBOOKTOKEN=0
+DELETE=117
+VISIT=0
+</responseData>
+</httpSample>
+<httpSample t="678" lt="678" ts="1367683687316" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 2-1" dt="text" by="274" ng="1" na="255">
+  <responseData class="java.lang.String">QUIZ=258
+VIEW=223
+TAG=0
+SAVE=290
+SHARE=261
+PUSHTOKEN=0
+CLICKTHROUGH=272
+FACEBOOKTOKEN=0
+DELETE=268
+VISIT=0
+</responseData>
+</httpSample>
+<httpSample t="27" lt="27" ts="1367683689995" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 2-1" dt="text" by="255" ng="1" na="1">
+  <responseData class="java.lang.String">QUIZ=293
+VIEW=251
+TAG=0
+SAVE=311
+SHARE=264
+PUSHTOKEN=0
+CLICKTHROUGH=283
+FACEBOOKTOKEN=0
+DELETE=269
+VISIT=0
+</responseData>
+</httpSample>
+<httpSample t="13" lt="13" ts="1367683692067" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 2-1" dt="text" by="254" ng="1" na="1">
+  <responseData class="java.lang.String">QUIZ=153
+VIEW=93
+TAG=0
+SAVE=181
+SHARE=130
+PUSHTOKEN=0
+CLICKTHROUGH=146
+FACEBOOKTOKEN=0
+DELETE=129
+VISIT=0
+</responseData>
+</httpSample>
+<httpSample t="120" lt="120" ts="1367683694147" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 2-1" dt="text" by="248" ng="1" na="1">
+  <responseData class="java.lang.String">QUIZ=51
+VIEW=0
+TAG=0
+SAVE=95
+SHARE=20
+PUSHTOKEN=0
+CLICKTHROUGH=24
+FACEBOOKTOKEN=0
+DELETE=34
+VISIT=0
+</responseData>
+</httpSample>
+<httpSample t="27" lt="27" ts="1367683696334" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 2-1" dt="text" by="243" ng="1" na="1">
+  <responseData class="java.lang.String">QUIZ=0
+VIEW=0
+TAG=0
+SAVE=0
+SHARE=0
+PUSHTOKEN=0
+CLICKTHROUGH=0
+FACEBOOKTOKEN=0
+DELETE=0
+VISIT=0
+</responseData>
+</httpSample>
+<httpSample t="47" lt="47" ts="1367683698095" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 2-1" dt="text" by="243" ng="1" na="1">
+  <responseData class="java.lang.String">QUIZ=0
+VIEW=0
+TAG=0
+SAVE=0
+SHARE=0
+PUSHTOKEN=0
+CLICKTHROUGH=0
+FACEBOOKTOKEN=0
+DELETE=0
+VISIT=0
+</responseData>
+</httpSample>
+
+</testResults>
