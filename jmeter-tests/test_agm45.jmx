@@ -28,7 +28,7 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">5</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">200</stringProp>
+        <stringProp name="ThreadGroup.num_threads">400</stringProp>
         <stringProp name="ThreadGroup.ramp_time">0</stringProp>
         <longProp name="ThreadGroup.start_time">1366639200000</longProp>
         <longProp name="ThreadGroup.end_time">1366640100000</longProp>
@@ -43,7 +43,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="notice" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{ &quot;peticion&quot; : &quot;${peticion}&quot;, &quot;uid&quot; : ${__threadNum}, &quot;idEvento&quot; : 999999999, &quot;TipoCompartido&quot; : 10, &quot;url&quot;:&quot;http://www.intelygenz.com&quot;, &quot;ip&quot;:&quot;127.0.0.1&quot;, &quot;idRespuesta&quot;:75}</stringProp>
+                <stringProp name="Argument.value">{ &quot;peticion&quot; : &quot;${peticion}&quot;, &quot;uid&quot; : ${__threadNum}, &quot;idEvento&quot; : ${evento}, &quot;TipoCompartido&quot; : 10, &quot;url&quot;:&quot;http://www.intelygenz.com&quot;, &quot;ip&quot;:&quot;127.0.0.1&quot;, &quot;idRespuesta&quot;:75}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">notice</stringProp>
@@ -70,25 +70,32 @@
         <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
           <collectionProp name="UserParameters.names">
             <stringProp name="490825455">peticion</stringProp>
+            <stringProp name="-1291329259">evento</stringProp>
           </collectionProp>
           <collectionProp name="UserParameters.thread_values">
-            <collectionProp name="1900088624">
+            <collectionProp name="-1170743773">
               <stringProp name="-844118720">compartido</stringProp>
+              <stringProp name="1725">63</stringProp>
             </collectionProp>
-            <collectionProp name="748521905">
+            <collectionProp name="1785393640">
               <stringProp name="-514510557">elimina_evento</stringProp>
+              <stringProp name="1726">64</stringProp>
             </collectionProp>
-            <collectionProp name="-958121233">
+            <collectionProp name="419063876">
               <stringProp name="-1530029081">guardado</stringProp>
+              <stringProp name="1725">63</stringProp>
             </collectionProp>
-            <collectionProp name="-1058299062">
+            <collectionProp name="1608518435">
               <stringProp name="-1687854399">navegacion</stringProp>
+              <stringProp name="1724">62</stringProp>
             </collectionProp>
-            <collectionProp name="1627759216">
+            <collectionProp name="-1023020905">
               <stringProp name="-1313238373">visualizado</stringProp>
+              <stringProp name="1723">61</stringProp>
             </collectionProp>
-            <collectionProp name="904076353">
+            <collectionProp name="-197767901">
               <stringProp name="3482197">quiz</stringProp>
+              <stringProp name="48658">112</stringProp>
             </collectionProp>
           </collectionProp>
           <boolProp name="UserParameters.per_iteration">false</boolProp>
@@ -127,7 +134,7 @@
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="SplineVisualizer" testclass="ResultCollector" testname="Spline Visualizer" enabled="true">
+        <ResultCollector guiclass="SplineVisualizer" testclass="ResultCollector" testname="Spline Visualizer" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -197,7 +204,7 @@
           <stringProp name="exclude_sample_labels"></stringProp>
         </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="RespTimeGraphVisualizer" testclass="ResultCollector" testname="Response Time Graph" enabled="true">
+        <ResultCollector guiclass="RespTimeGraphVisualizer" testclass="ResultCollector" testname="Response Time Graph" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -230,7 +237,7 @@
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="DistributionGraphVisualizer" testclass="ResultCollector" testname="Distribution Graph (alpha)" enabled="true">
+        <ResultCollector guiclass="DistributionGraphVisualizer" testclass="ResultCollector" testname="Distribution Graph (alpha)" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -443,7 +450,7 @@
           <stringProp name="exclude_sample_labels"></stringProp>
         </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -484,11 +491,11 @@
           <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">0</stringProp>
         <longProp name="ThreadGroup.start_time">1366630022000</longProp>
         <longProp name="ThreadGroup.end_time">1366630022000</longProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
-        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.duration">6000</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
@@ -513,7 +520,7 @@
         </HTTPSamplerProxy>
         <hashTree/>
         <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
-          <stringProp name="ConstantTimer.delay">1000</stringProp>
+          <stringProp name="ConstantTimer.delay">5000</stringProp>
         </ConstantTimer>
         <hashTree/>
         <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.PageDataExtractorOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Page Data Extractor" enabled="true">
