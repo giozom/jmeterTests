@@ -2,19 +2,19 @@
 <jmeterTestPlan version="1.2" properties="2.4" jmeter="2.9 r1437961">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="agm45" enabled="true">
-      <stringProp name="TestPlan.comments">pruebas carga agm45</stringProp>
+      <stringProp name="TestPlan.comments">pruebas carga agm45 // agm45-igz.herokuapp.com/services</stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario" enabled="true">
         <collectionProp name="Arguments.arguments">
           <elementProp name="server" elementType="Argument">
             <stringProp name="Argument.name">server</stringProp>
-            <stringProp name="Argument.value">192.168.130.156</stringProp>
+            <stringProp name="Argument.value">agm45-front.cloudapp.net</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="port" elementType="Argument">
             <stringProp name="Argument.name">port</stringProp>
-            <stringProp name="Argument.value">82</stringProp>
+            <stringProp name="Argument.value">80</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -41,12 +41,54 @@
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="request" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario" enabled="true">
             <collectionProp name="Arguments.arguments">
-              <elementProp name="notice" elementType="HTTPArgument">
+              <elementProp name="uid" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{    peticion : &quot;compartido&quot;   uid : ${uid}   idEvento : 999999999   TipoCompartido : 10 }</stringProp>
+                <stringProp name="Argument.value">${uid}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                <stringProp name="Argument.name">notice</stringProp>
+                <stringProp name="Argument.name">uid</stringProp>
+              </elementProp>
+              <elementProp name="idEvento" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${idevento}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">idEvento</stringProp>
+              </elementProp>
+              <elementProp name="idRespuesta" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${idevento}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">idRespuesta</stringProp>
+              </elementProp>
+              <elementProp name="TipoCompartido" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${TipoCompartido}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">TipoCompartido</stringProp>
+              </elementProp>
+              <elementProp name="xbd_action" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${xbd_action}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">xbd_action</stringProp>
+              </elementProp>
+              <elementProp name="fkIdRespuesta@Metrics_encuesta" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${fkIdRespuesta@Metrics_encuesta}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">fkIdRespuesta@Metrics_encuesta</stringProp>
+              </elementProp>
+              <elementProp name="uid@Metrics_encuesta" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${uid@Metrics_encuesta}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">uid@Metrics_encuesta</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
@@ -56,7 +98,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/Handlers/${evento}.ashx</stringProp>
+          <stringProp name="HTTPSampler.path">${eventos}.aspx</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -69,36 +111,58 @@
         <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
           <collectionProp name="UserParameters.names">
             <stringProp name="115792">uid</stringProp>
-            <stringProp name="-1291329259">evento</stringProp>
+            <stringProp name="-1376501250">eventos</stringProp>
+            <stringProp name="-128815632">idevento</stringProp>
+            <stringProp name="568807348">TipoCompartido</stringProp>
+            <stringProp name="624199515">xbd_action</stringProp>
+            <stringProp name="-342156542">uid@Metrics_encuesta</stringProp>
+            <stringProp name="435349106">fkIdRespuesta@Metrics_encuesta</stringProp>
           </collectionProp>
           <collectionProp name="UserParameters.thread_values">
-            <collectionProp name="1716272021">
-              <stringProp name="1508416">1111</stringProp>
-              <stringProp name="1932430583">json_compartido</stringProp>
+            <collectionProp name="575508650">
+              <stringProp name="1894027079">alvaro_jmeter2</stringProp>
+              <stringProp name="1574336639">/json/json_compartido</stringProp>
+              <stringProp name="49">1</stringProp>
+              <stringProp name="1567">10</stringProp>
+              <stringProp name="0"></stringProp>
+              <stringProp name="0"></stringProp>
+              <stringProp name="0"></stringProp>
             </collectionProp>
-            <collectionProp name="1846601387">
-              <stringProp name="1508417">1112</stringProp>
-              <stringProp name="1347226043">respuesta_xbd</stringProp>
+            <collectionProp name="1265338705">
+              <stringProp name="1894027079">alvaro_jmeter2</stringProp>
+              <stringProp name="-865981214">/json/json_elimina_evento</stringProp>
+              <stringProp name="49">1</stringProp>
+              <stringProp name="0"></stringProp>
+              <stringProp name="0"></stringProp>
+              <stringProp name="0"></stringProp>
+              <stringProp name="0"></stringProp>
             </collectionProp>
-            <collectionProp name="-1801129446">
-              <stringProp name="1508418">1113</stringProp>
-              <stringProp name="1744364894">json_guardado</stringProp>
+            <collectionProp name="335309020">
+              <stringProp name="1894027079">alvaro_jmeter2</stringProp>
+              <stringProp name="-1388965146">/json/json_guardado</stringProp>
+              <stringProp name="49">1</stringProp>
+              <stringProp name="0"></stringProp>
+              <stringProp name="0"></stringProp>
+              <stringProp name="0"></stringProp>
+              <stringProp name="0"></stringProp>
             </collectionProp>
-            <collectionProp name="1811540805">
-              <stringProp name="1508419">1114</stringProp>
-              <stringProp name="-1139555900">json_visualizado</stringProp>
+            <collectionProp name="-1055793807">
+              <stringProp name="1894027079">alvaro_jmeter2</stringProp>
+              <stringProp name="644433724">/json/json_visualizado</stringProp>
+              <stringProp name="49">1</stringProp>
+              <stringProp name="0"></stringProp>
+              <stringProp name="0"></stringProp>
+              <stringProp name="0"></stringProp>
+              <stringProp name="0"></stringProp>
             </collectionProp>
-            <collectionProp name="-752680082">
-              <stringProp name="1508420">1115</stringProp>
-              <stringProp name="1088694904">json_navegacion</stringProp>
-            </collectionProp>
-            <collectionProp name="-1543265233">
-              <stringProp name="1508421">1116</stringProp>
-              <stringProp name="424237131">json_push_token</stringProp>
-            </collectionProp>
-            <collectionProp name="1353905431">
-              <stringProp name="1508422">1117</stringProp>
-              <stringProp name="-1775549094">json_elimina_evento</stringProp>
+            <collectionProp name="-793057561">
+              <stringProp name="1894027079">alvaro_jmeter2</stringProp>
+              <stringProp name="2117517340">/admin/metrics_encuesta_xbd</stringProp>
+              <stringProp name="48656">110</stringProp>
+              <stringProp name="0"></stringProp>
+              <stringProp name="49">1</stringProp>
+              <stringProp name="1894027079">alvaro_jmeter2</stringProp>
+              <stringProp name="48656">110</stringProp>
             </collectionProp>
           </collectionProp>
           <boolProp name="UserParameters.per_iteration">false</boolProp>
@@ -137,7 +201,7 @@
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="SplineVisualizer" testclass="ResultCollector" testname="Spline Visualizer" enabled="true">
+        <ResultCollector guiclass="SplineVisualizer" testclass="ResultCollector" testname="Spline Visualizer" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -207,7 +271,7 @@
           <stringProp name="exclude_sample_labels"></stringProp>
         </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="RespTimeGraphVisualizer" testclass="ResultCollector" testname="Response Time Graph" enabled="true">
+        <ResultCollector guiclass="RespTimeGraphVisualizer" testclass="ResultCollector" testname="Response Time Graph" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -240,7 +304,7 @@
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="DistributionGraphVisualizer" testclass="ResultCollector" testname="Distribution Graph (alpha)" enabled="true">
+        <ResultCollector guiclass="DistributionGraphVisualizer" testclass="ResultCollector" testname="Distribution Graph (alpha)" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -436,7 +500,7 @@
         </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <boolProp name="ResultCollector.error_logging">true</boolProp>
           <objProp>
             <name>saveConfig</name>
             <value class="SampleSaveConfiguration">
@@ -469,7 +533,7 @@
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Hilo Status" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Hilo Status" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
